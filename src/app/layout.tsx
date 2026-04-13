@@ -11,7 +11,7 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 1,
   userScalable: false, // Prevents zoom for mobile-app feel
-  themeColor: '#E6DED4',
+  themeColor: '#F4EFE8', // matches the --surface color
 };
 
 export default function RootLayout({
