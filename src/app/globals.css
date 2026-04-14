@@ -136,3 +136,14 @@ img {
   border-radius: 16px;
   object-fit: cover;
 }
+
+/* Responsiveness Utilities */
+.desktop-only { display: none !important; }
+.mobile-only { display: inline-flex !important; }
+.desktop-nav { display: none; }
+
+@media (min-width: 768px) {
+  .desktop-only { display: inline-flex !important; }
+  .mobile-only { display: none !important; }
+  .desktop-nav { display: flex; }
+}
