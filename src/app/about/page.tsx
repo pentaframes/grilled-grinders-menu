@@ -1,20 +1,14 @@
 import PremiumHeader from '@/components/PremiumHeader';
-import PremiumHero from '@/components/PremiumHero';
 import PremiumContent from '@/components/PremiumContent';
 import PremiumFooter from '@/components/PremiumFooter';
 
-export default function HomePage() {
+export default function AboutPage() {
   return (
     <>
       <PremiumHeader />
-      <div id="home" style={{ scrollMarginTop: '100px' }}>
-        <PremiumHero />
-      </div>
-
-      <div id="about" style={{ scrollMarginTop: '100px' }}>
+      <div style={{ paddingTop: '100px' }}>
         <PremiumContent />
       </div>
-      
       <PremiumFooter />
     </>
   );

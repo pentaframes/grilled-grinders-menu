@@ -1,5 +1,14 @@
 'use client';
+import Link from 'next/link';
+
 export default function PremiumHeader() {
+  const navLinks = [
+    { name: 'Home', href: '/' },
+    { name: 'Menu', href: '/menu' },
+    { name: 'About', href: '/about' },
+    { name: 'Gallery', href: '/gallery' },
+  ];
+
   return (
     <header style={{
       display: 'flex',
@@ -10,9 +19,9 @@ export default function PremiumHeader() {
       gap: '16px'
     }}>
       {/* Left: Logo */}
-      <div className="font-heading" style={{ fontSize: '22px', fontWeight: 600, color: 'var(--primary)' }}>
+      <Link href="/" className="font-heading" style={{ fontSize: '22px', fontWeight: 600, color: 'var(--primary)', textDecoration: 'none' }}>
         Grilled Grinders
-      </div>
+      </Link>
 
       {/* Center: Desktop Nav (Hidden on small mobile for simplicity, but flex wrapping handles it gracefully) */}
       <nav style={{
@@ -20,8 +29,8 @@ export default function PremiumHeader() {
         gap: '24px',
         alignItems: 'center'
       }}>
-        {['Home', 'Menu', 'About', 'Gallery'].map(link => (
-          <a key={link} href={`#${link.toLowerCase()}`} style={{
+        {navLinks.map(link => (
+          <Link key={link.name} href={link.href} style={{
             fontSize: '14px',
             color: 'var(--text)',
             textDecoration: 'none',
@@ -31,11 +40,11 @@ export default function PremiumHeader() {
             minHeight: '48px', // Mobile touch target rule
             transition: 'opacity 0.2s ease'
           }}
-          onMouseEnter={(e) => e.currentTarget.style.opacity = '0.7'}
-          onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
+          onMouseEnter={(e) => { e.currentTarget.style.opacity = '0.7'; }}
+          onMouseLeave={(e) => { e.currentTarget.style.opacity = '1'; }}
           >
-            {link}
-          </a>
+            {link.name}
+          </Link>
         ))}
       </nav>
 
