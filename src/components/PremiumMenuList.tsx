@@ -159,7 +159,7 @@ export default function PremiumMenuList({ menuByCategory }: PremiumMenuListProps
                       justifyContent: 'center',
                     }}
                   >
-                    Enjoy Your Meal
+                    Order
                   </span>
                 </div>
               </article>
