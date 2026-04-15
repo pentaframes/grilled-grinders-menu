@@ -144,22 +144,23 @@ export default function PremiumMenuList({ menuByCategory }: PremiumMenuListProps
                   <span style={{ fontSize: '15px', fontWeight: 700, color: '#D49A1F', whiteSpace: 'nowrap' }}>
                     {formatPrice(item.price)}
                   </span>
-                  <button
-                    type="button"
-                    className="btn"
+                  <span
                     style={{
                       minHeight: '30px',
-                      minWidth: '72px',
+                      minWidth: '78px',
                       padding: '0 10px',
                       borderRadius: '9px',
                       backgroundColor: '#D29B28',
                       color: '#2A1A18',
                       fontSize: '12px',
                       fontWeight: 600,
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
                     }}
                   >
-                    Order
-                  </button>
+                    Enjoy Your Meal
+                  </span>
                 </div>
               </article>
             ))}
