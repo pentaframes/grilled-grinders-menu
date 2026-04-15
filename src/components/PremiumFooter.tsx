@@ -52,31 +52,31 @@ export default function PremiumFooter() {
               letterSpacing: '0.05em',
               textTransform: 'uppercase'
             }}>
-              Premium Cafe & Grill
+              North Indian Fast Food
             </span>
           </div>
         </div>
 
         <p className="text-muted text-small" style={{ lineHeight: '1.6' }}>
-          123 Coffee Ave.<br />
-          Brew City, BC 90210
+          Uddhab Babu Street, Anna School Lane,<br />
+          New Barhi Toli, Lalpur, Ranchi
         </p>
       </div>
 
-      {/* Coffee Menu */}
+      {/* Service */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-        <h4 className="font-heading" style={{ fontSize: '16px' }}>Coffee Menu</h4>
-        <a href="#" className="text-muted text-small" style={{ textDecoration: 'none' }}>Espresso</a>
-        <a href="#" className="text-muted text-small" style={{ textDecoration: 'none' }}>Cappuccino</a>
-        <a href="#" className="text-muted text-small" style={{ textDecoration: 'none' }}>Lattes</a>
+        <h4 className="font-heading" style={{ fontSize: '16px' }}>Service</h4>
+        <span className="text-muted text-small">Takeaway</span>
+        <span className="text-muted text-small">Home Delivery</span>
+        <span className="text-muted text-small">Dine-In</span>
       </div>
 
-      {/* About Us */}
+      {/* Timings */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-        <h4 className="font-heading" style={{ fontSize: '16px' }}>About Us</h4>
-        <a href="#" className="text-muted text-small" style={{ textDecoration: 'none' }}>Our Story</a>
-        <a href="#" className="text-muted text-small" style={{ textDecoration: 'none' }}>Careers</a>
-        <a href="#" className="text-muted text-small" style={{ textDecoration: 'none' }}>Contact</a>
+        <h4 className="font-heading" style={{ fontSize: '16px' }}>Timings</h4>
+        <span className="text-muted text-small">Open Daily</span>
+        <span className="text-muted text-small">9:00 AM - 9:00 PM</span>
+        <span className="text-muted text-small">Cost for two: ₹200</span>
       </div>
 
       {/* Social Links */}

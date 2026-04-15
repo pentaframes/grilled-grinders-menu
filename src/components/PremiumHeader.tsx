@@ -1,8 +1,6 @@
 'use client';
 import Link from 'next/link';
-import Image from 'next/image';
 import { useState } from 'react';
-import logoImg from '../../public/grilled-grinders.png';
 
 export default function PremiumHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,24 +18,24 @@ export default function PremiumHeader() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
-        padding: '12px 24px',
+        padding: '10px 16px',
         position: 'sticky',
         top: 0,
         zIndex: 100,
-        backgroundColor: 'rgba(244, 239, 232, 0.95)', // Slightly more opaque for better readability
+        backgroundColor: 'rgba(244, 239, 232, 0.98)',
         backdropFilter: 'blur(10px)',
-        borderBottom: '1px solid rgba(75, 46, 43, 0.05)',
+        borderBottom: '1px solid rgba(75, 46, 43, 0.08)',
       }}>
         {/* Left: Logo Section */}
         <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '12px', textDecoration: 'none' }}>
           {/* Circular Logo */}
           <div style={{ 
-            width: '50px', 
-            height: '50px', 
+            width: '42px', 
+            height: '42px', 
             borderRadius: '50%', 
             overflow: 'hidden', 
-            border: '2px solid #FF0000', // Bright red border for debugging
-            background: '#4B2E2B', // Dark fallback background
+            border: '1px solid rgba(75, 46, 43, 0.2)',
+            background: '#4B2E2B',
             position: 'relative',
             display: 'flex',
             alignItems: 'center',
@@ -54,7 +52,7 @@ export default function PremiumHeader() {
           {/* Logo Text Stack */}
           <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
             <span className="font-heading" style={{ 
-              fontSize: '20px', 
+              fontSize: '18px', 
               fontWeight: 700, 
               color: 'var(--primary)', 
               lineHeight: 1.1,
@@ -66,12 +64,12 @@ export default function PremiumHeader() {
             <span className="font-body" style={{ 
               fontSize: '10px', 
               fontWeight: 600, 
-              color: '#B8860B', // Golden/Tan color similar to reference
+              color: '#B8860B',
               letterSpacing: '0.1em',
               textTransform: 'uppercase',
               marginTop: '2px'
             }}>
-              Premium Cafe & Grill
+              North Indian Fast Food
             </span>
           </div>
         </Link>
@@ -98,9 +96,13 @@ export default function PremiumHeader() {
 
         {/* Right: CONTACT Button & Hamburger Menu */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <button className="btn btn-primary desktop-only" style={{ textTransform: 'uppercase', fontSize: '13px', padding: '10px 24px' }}>
+          <Link
+            href="/about"
+            className="btn btn-primary desktop-only"
+            style={{ textTransform: 'uppercase', fontSize: '13px', padding: '10px 24px' }}
+          >
             Contact
-          </button>
+          </Link>
           
           {/* Hamburger Menu (Mobile Only) */}
           <button 
@@ -150,9 +152,14 @@ export default function PremiumHeader() {
               {link.name}
             </Link>
           ))}
-          <button className="btn btn-primary" style={{ marginTop: '24px', padding: '16px', fontSize: '16px' }}>
+          <Link
+            href="/about"
+            onClick={() => setIsMenuOpen(false)}
+            className="btn btn-primary"
+            style={{ marginTop: '24px', padding: '16px', fontSize: '16px', textDecoration: 'none' }}
+          >
             Contact Us
-          </button>
+          </Link>
         </div>
       )}
     </>

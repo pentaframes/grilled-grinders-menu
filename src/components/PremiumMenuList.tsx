@@ -5,82 +5,163 @@ interface PremiumMenuListProps {
   menuByCategory: Record<string, MenuItem[]>;
 }
 
+function formatPrice(price: string): string {
+  const trimmed = price.trim();
+  if (!trimmed) return '₹0';
+  if (trimmed.includes('₹')) return trimmed;
+  return `₹${trimmed}`;
+}
+
+function getDietType(item: MenuItem): 'veg' | 'non-veg' {
+  const tags = item.tags.toLowerCase();
+  const name = item.name.toLowerCase();
+  const category = item.category.toLowerCase();
+  const text = `${tags} ${name} ${category}`;
+
+  if (
+    text.includes('non-veg') ||
+    text.includes('non veg') ||
+    text.includes('chicken') ||
+    text.includes('mutton') ||
+    text.includes('beef') ||
+    text.includes('fish') ||
+    text.includes('prawn') ||
+    text.includes('egg')
+  ) {
+    return 'non-veg';
+  }
+
+  return 'veg';
+}
+
 export default function PremiumMenuList({ menuByCategory }: PremiumMenuListProps) {
   const categories = Object.keys(menuByCategory);
 
   return (
-    <section id="menu" style={{ marginBottom: '60px', padding: '0 16px' }}>
-      
+    <section id="menu" style={{ marginBottom: '60px', padding: '0 12px' }}>
       {categories.map((category) => (
-        <div key={category} id={`cat-${category.toLowerCase().replace(/\s+/g, '-')}`} style={{ marginBottom: '32px', scrollMarginTop: '100px' }}>
-          <h2 className="font-heading" style={{ fontSize: '20px', color: 'var(--primary)', marginBottom: '16px' }}>
-            {category} <span style={{ fontSize: '14px', color: 'var(--text-muted)' }}>({menuByCategory[category].length})</span>
-          </h2>
+        <div
+          key={category}
+          id={`cat-${category.toLowerCase().replace(/\s+/g, '-')}`}
+          style={{ marginBottom: '36px', scrollMarginTop: '170px' }}
+        >
+          <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px', marginBottom: '10px' }}>
+            <h2 className="font-heading menu-category-heading" style={{ color: 'var(--primary)' }}>
+              <span>{category}</span>
+            </h2>
+            <span className="text-muted menu-category-count">
+              ({menuByCategory[category].length} items)
+            </span>
+          </div>
 
-          <div style={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '12px'
-          }}>
+          <div
+            className="menu-items-grid"
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '10px',
+            }}
+          >
             {menuByCategory[category].map((item, index) => (
-              <div key={item.name} style={{
-                backgroundColor: '#EBE3D9', // Warm beige background matches target images
-                borderRadius: '12px',
-                display: 'flex',
-                alignItems: 'center',
-                padding: '8px',
-                position: 'relative'
-              }}>
-                {/* 1. Thumbnail Image on the left */}
-                <div style={{ position: 'relative', width: '60px', height: '60px', borderRadius: '8px', overflow: 'hidden', flexShrink: 0 }}>
-                  <Image 
-                    src={item.image || '/fallback.jpg'} 
-                    alt={item.name} 
+              <article
+                className="menu-item-card"
+                key={`${item.name}-${index}`}
+                style={{
+                  backgroundColor: '#E1D5C8',
+                  borderRadius: '12px',
+                  border: '1px solid rgba(75, 46, 43, 0.06)',
+                  display: 'grid',
+                  gridTemplateColumns: '64px 1fr auto',
+                  alignItems: 'center',
+                  gap: '9px',
+                  padding: '10px',
+                }}
+              >
+                <div
+                  style={{
+                    position: 'relative',
+                    width: '64px',
+                    height: '64px',
+                    borderRadius: '8px',
+                    overflow: 'hidden',
+                    backgroundColor: 'rgba(75, 46, 43, 0.08)',
+                  }}
+                >
+                  <Image
+                    src={item.image || '/fallback.jpg'}
+                    alt={item.name}
                     fill
+                    sizes="64px"
                     style={{ objectFit: 'cover' }}
-                    sizes="60px"
+                    loading={index < 3 ? 'eager' : 'lazy'}
                   />
                 </div>
 
-                {/* 2. Middle Info */}
-                <div style={{ padding: '0 12px', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                     {/* Veg indicator dot placeholder (Green) */}
-                     <span style={{ 
-                       width: '10px', height: '10px', border: '2px solid #22c55e', borderRadius: '50%', display: 'inline-flex', justifyContent: 'center', alignItems: 'center' 
-                     }}>
-                       <span style={{ width: '4px', height: '4px', backgroundColor: '#22c55e', borderRadius: '50%' }} />
-                     </span>
-                     <h3 className="font-body" style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                       {item.name}
-                     </h3>
+                <div style={{ minWidth: 0 }}>
+                  {(() => {
+                    const dietType = getDietType(item);
+                    const markerColor = dietType === 'veg' ? '#1AAF4A' : '#C9352A';
+
+                    return (
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <span
+                      aria-hidden="true"
+                      style={{
+                        width: '14px',
+                        height: '14px',
+                        borderRadius: '3px',
+                        border: `2px solid ${markerColor}`,
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        flexShrink: 0,
+                      }}
+                    >
+                      <span style={{ width: '6px', height: '6px', backgroundColor: markerColor, borderRadius: '999px' }} />
+                    </span>
+                    <h3
+                      className="font-body"
+                      style={{
+                        fontSize: '14px',
+                        fontWeight: 500,
+                        color: '#3B2A25',
+                        lineHeight: 1.3,
+                        whiteSpace: 'normal',
+                        overflow: 'hidden',
+                        display: '-webkit-box',
+                        WebkitLineClamp: 2,
+                        WebkitBoxOrient: 'vertical',
+                      }}
+                    >
+                      {item.name}
+                    </h3>
                   </div>
-                  {/* Rating placeholder (Optional, if we want to show stars like the image's "31" or similar tag) */}
-                  <div style={{ fontSize: '12px', color: 'var(--accent)', marginTop: '4px' }}>
-                    ★★★★☆ (4)
-                  </div>
+                    );
+                  })()}
                 </div>
 
-                {/* 3. Right side: Price & Add Button */}
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', justifyContent: 'center', minWidth: '60px' }}>
-                  <span style={{ fontSize: '14px', fontWeight: 700, color: 'var(--text)', marginBottom: '8px' }}>
-                    {item.price}
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '8px' }}>
+                  <span style={{ fontSize: '15px', fontWeight: 700, color: '#D49A1F', whiteSpace: 'nowrap' }}>
+                    {formatPrice(item.price)}
                   </span>
-                  <button style={{
-                    backgroundColor: '#E8B65A', // The golden-yellow button color from the reference
-                    color: 'white',
-                    border: 'none',
-                    borderRadius: '12px',
-                    padding: '4px 16px',
-                    fontSize: '12px',
-                    fontWeight: 600,
-                    cursor: 'pointer',
-                    boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
-                  }}>
-                    Add +
+                  <button
+                    type="button"
+                    className="btn"
+                    style={{
+                      minHeight: '30px',
+                      minWidth: '72px',
+                      padding: '0 10px',
+                      borderRadius: '9px',
+                      backgroundColor: '#D29B28',
+                      color: '#2A1A18',
+                      fontSize: '12px',
+                      fontWeight: 600,
+                    }}
+                  >
+                    Order
                   </button>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </div>

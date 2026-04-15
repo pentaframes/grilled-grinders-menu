@@ -1,66 +1,77 @@
 export default function PremiumContent() {
   return (
-    <section style={{
-      display: 'flex',
-      flexWrap: 'wrap',
-      gap: '40px',
-      marginBottom: '60px',
-      alignItems: 'center'
-    }}>
-      {/* Left: Café Interior Image Placeholder */}
-      <div style={{
-        flex: '1 1 400px',
-        minHeight: '320px',
-        backgroundColor: '#D7CFC6',
-        borderRadius: '24px',
-        boxShadow: 'var(--shadow-card)',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        fontSize: '48px'
-      }}>
-        🏪
-      </div>
-
-      {/* Right: Text Content + Croissant Image */}
-      <div style={{
-        flex: '1 1 300px',
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '20px'
-      }}>
-        <h2 className="font-heading" style={{ fontSize: '24px' }}>
-          About Coffee,<br />
-          Espresso & Confections
+    <section
+      style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+        gap: '16px',
+        marginBottom: '60px',
+      }}
+    >
+      <article
+        style={{
+          backgroundColor: '#E9DFD3',
+          border: '1px solid rgba(75, 46, 43, 0.08)',
+          borderRadius: '16px',
+          padding: '18px',
+        }}
+      >
+        <h2 className="font-heading" style={{ fontSize: '24px', marginBottom: '10px' }}>
+          Grilled Grinders, Ranchi
         </h2>
-        
-        <p className="font-body text-muted" style={{ maxWidth: '400px' }}>
-          Hand-crafted espresso paired perfectly with daily baked goods. Experience the warmth of our cafe and the rich complexity of our roasts.
+        <p className="font-body text-muted">
+          A casual North Indian fast-food restaurant on Uddhab Babu Street, Lalpur. Perfect for quick lunch, dinner,
+          and takeaway meals with budget-friendly pricing.
         </p>
-        
-        {/* Rating Stars */}
-        <div style={{ color: 'var(--accent)', fontSize: '20px', letterSpacing: '4px' }}>
-          ★★★★★
-        </div>
-        <p className="text-small font-heading" style={{ fontWeight: 600 }}>Over 5k+ Happy Guests</p>
+      </article>
 
-        {/* Small "Croissant" side float image */}
-        <div style={{
-          width: '180px',
-          height: '140px',
-          backgroundColor: '#E8CAAD',
-          borderRadius: '20px',
-          boxShadow: 'var(--shadow-card)',
-          alignSelf: 'flex-start',
-          marginTop: '16px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          fontSize: '48px'
-        }}>
-          🥐
-        </div>
-      </div>
+      <article
+        style={{
+          backgroundColor: '#E9DFD3',
+          border: '1px solid rgba(75, 46, 43, 0.08)',
+          borderRadius: '16px',
+          padding: '18px',
+        }}
+      >
+        <h3 className="font-heading" style={{ fontSize: '18px', marginBottom: '8px' }}>Location</h3>
+        <p className="font-body text-muted">
+          Uddhab Babu Street, Anna School Lane,
+          <br />
+          New Barhi Toli, Lalpur, Ranchi
+        </p>
+      </article>
+
+      <article
+        style={{
+          backgroundColor: '#E9DFD3',
+          border: '1px solid rgba(75, 46, 43, 0.08)',
+          borderRadius: '16px',
+          padding: '18px',
+        }}
+      >
+        <h3 className="font-heading" style={{ fontSize: '18px', marginBottom: '8px' }}>Hours & Service</h3>
+        <p className="font-body text-muted">
+          9:00 AM to 9:00 PM
+          <br />
+          Takeaway and home delivery available
+        </p>
+      </article>
+
+      <article
+        style={{
+          backgroundColor: '#E9DFD3',
+          border: '1px solid rgba(75, 46, 43, 0.08)',
+          borderRadius: '16px',
+          padding: '18px',
+        }}
+      >
+        <h3 className="font-heading" style={{ fontSize: '18px', marginBottom: '8px' }}>Cuisine & Budget</h3>
+        <p className="font-body text-muted">
+          Cuisine: North Indian, Fast Food
+          <br />
+          Approx. cost for two: ₹200
+        </p>
+      </article>
     </section>
   );
 }

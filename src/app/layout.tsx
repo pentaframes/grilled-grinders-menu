@@ -2,8 +2,9 @@ import type { Metadata, Viewport } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Grilled Grinders — Coffee & Co.',
-  description: 'Brewed Fresh, Served Warm. Premium Coffee experiences.',
+  title: 'Grilled Grinders Ranchi',
+  description:
+    'Casual North Indian fast-food restaurant in Lalpur, Ranchi. Lunch, dinner, takeaway, and home delivery from 9 AM to 9 PM.',
 };
 
 export const viewport: Viewport = {

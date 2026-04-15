@@ -5,6 +5,8 @@ export interface MenuItem {
   image: string;
   description: string;
   available: boolean;
+  order: number;
+  tags: string;
 }
 
 export type MenuByCategory = Record<string, MenuItem[]>;
