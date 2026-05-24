@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function PremiumHero() {
   return (
@@ -43,7 +44,7 @@ export default function PremiumHero() {
             borderRadius: '16px',
             backdropFilter: 'blur(4px)'
           }}>
-            Fresh Coffee
+            Grilled Grinders, Lalpur
           </span>
           <h1 className="font-heading" style={{
             fontSize: 'clamp(28px, 5vw, 40px)',
@@ -52,7 +53,7 @@ export default function PremiumHero() {
             marginBottom: '16px',
             maxWidth: '400px'
           }}>
-            Brewed Fresh, Served Warm
+            Fresh Grills • Premium Coffee • Fast Bites
           </h1>
           <p style={{
             fontSize: '14px',
@@ -61,11 +62,83 @@ export default function PremiumHero() {
             maxWidth: '400px',
             lineHeight: 1.5
           }}>
-            Experience the finest selection of hand-crafted espresso, baked goods, and warming atmospheres.
+            Lalpur's favorite spot for grilled sandwiches, burgers, shakes, and coffee. A cozy Ranchi café perfect for hangouts, meetings, and quick cravings.
           </p>
-          <button className="btn btn-light" style={{ padding: '12px 28px' }}>
-            Visit us
-          </button>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', width: '100%' }}>
+            <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+              <Link href="/menu" className="btn btn-light" style={{ padding: '12px 28px', borderRadius: '30px', textDecoration: 'none', fontWeight: 600 }}>
+                View Menu
+              </Link>
+            </div>
+            
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+              <span style={{
+                fontSize: '11px',
+                textTransform: 'uppercase',
+                letterSpacing: '0.12em',
+                color: 'rgba(255, 255, 255, 0.7)',
+                fontWeight: 600
+              }}>
+                Order & Dining
+              </span>
+              <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+                <a href="https://www.swiggy.com/city/ranchi/grilled-grinders-lalpur-rest149305" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   className="order-badge"
+                   style={{
+                     display: 'flex',
+                     alignItems: 'center',
+                     gap: '10px',
+                     backgroundColor: '#FFFFFF',
+                     padding: '10px 20px',
+                     borderRadius: '30px',
+                     textDecoration: 'none',
+                     border: '1px solid rgba(255, 255, 255, 0.8)',
+                     boxShadow: '0 4px 15px rgba(0, 0, 0, 0.1)',
+                   }}>
+                  <img src="/swiggy.png" alt="Swiggy" style={{ height: '20px', objectFit: 'contain', borderRadius: '0' }} />
+                  <span style={{ color: '#FC8019', fontWeight: 700, fontSize: '14px', fontFamily: 'var(--font-body)' }}>Swiggy</span>
+                </a>
+                <a href="https://www.zomato.com/ranchi/grilled-grinders-lalpur" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   className="order-badge"
+                   style={{
+                     display: 'flex',
+                     alignItems: 'center',
+                     gap: '10px',
+                     backgroundColor: '#FFFFFF',
+                     padding: '10px 20px',
+                     borderRadius: '30px',
+                     textDecoration: 'none',
+                     border: '1px solid rgba(255, 255, 255, 0.8)',
+                     boxShadow: '0 4px 15px rgba(0, 0, 0, 0.1)',
+                   }}>
+                  <img src="/zomato.png" alt="Zomato" style={{ height: '16px', objectFit: 'contain', borderRadius: '0' }} />
+                  <span style={{ color: '#E23744', fontWeight: 700, fontSize: '14px', fontFamily: 'var(--font-body)' }}>Zomato</span>
+                </a>
+                <a href="https://www.district.in/dining/ranchi/grilled-grinders-lalpur" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   className="order-badge"
+                   style={{
+                     display: 'flex',
+                     alignItems: 'center',
+                     gap: '10px',
+                     backgroundColor: '#FFFFFF',
+                     padding: '10px 20px',
+                     borderRadius: '30px',
+                     textDecoration: 'none',
+                     border: '1px solid rgba(255, 255, 255, 0.8)',
+                     boxShadow: '0 4px 15px rgba(0, 0, 0, 0.1)',
+                   }}>
+                  <img src="/district.png" alt="District" style={{ height: '18px', objectFit: 'contain', borderRadius: '0' }} />
+                  <span style={{ color: '#0F2A27', fontWeight: 700, fontSize: '14px', fontFamily: 'var(--font-body)' }}>District</span>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Right Side: Mock Coffee Cup Image */}

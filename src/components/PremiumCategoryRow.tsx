@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 interface PremiumCategoryRowProps {
   categories: string[];
@@ -8,7 +8,7 @@ interface PremiumCategoryRowProps {
 
 export default function PremiumCategoryRow({ categories }: PremiumCategoryRowProps) {
   const [activeCategory, setActiveCategory] = useState(categories[0] || '');
-  const [rowElement, setRowElement] = useState<HTMLDivElement | null>(null);
+  const rowRef = useRef<HTMLDivElement | null>(null);
 
   const handleClick = (cat: string) => {
     setActiveCategory(cat);
@@ -23,9 +23,6 @@ export default function PremiumCategoryRow({ categories }: PremiumCategoryRowPro
     <section
       id="categories"
       style={{
-        position: 'sticky',
-        top: '74px',
-        zIndex: 30,
         marginBottom: '16px',
         backgroundColor: 'var(--surface)',
         display: 'flex',
@@ -36,7 +33,7 @@ export default function PremiumCategoryRow({ categories }: PremiumCategoryRowPro
         type="button"
         className="desktop-chip-arrow"
         aria-label="Scroll categories left"
-        onClick={() => rowElement?.scrollBy({ left: -220, behavior: 'smooth' })}
+        onClick={() => rowRef.current?.scrollBy({ left: -220, behavior: 'smooth' })}
         style={{
           width: '28px',
           height: '28px',
@@ -52,7 +49,7 @@ export default function PremiumCategoryRow({ categories }: PremiumCategoryRowPro
       </button>
       <div
         id="categories-row"
-        ref={setRowElement}
+        ref={rowRef}
         className="hide-scrollbar"
         style={{
           display: 'flex',
@@ -110,7 +107,7 @@ export default function PremiumCategoryRow({ categories }: PremiumCategoryRowPro
         type="button"
         className="desktop-chip-arrow"
         aria-label="Scroll categories right"
-        onClick={() => rowElement?.scrollBy({ left: 220, behavior: 'smooth' })}
+        onClick={() => rowRef.current?.scrollBy({ left: 220, behavior: 'smooth' })}
         style={{
           width: '28px',
           height: '28px',

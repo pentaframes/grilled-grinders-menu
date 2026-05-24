@@ -201,3 +201,33 @@ img {
     font-size: 13px;
   }
 }
+
+/* Sticky Search & Category Header */
+.sticky-menu-header {
+  position: sticky;
+  top: 63px; /* Mobile header height */
+  z-index: 40;
+  background-color: var(--surface);
+  padding-top: 10px;
+  padding-bottom: 4px;
+}
+
+@media (min-width: 768px) {
+  .sticky-menu-header {
+    top: 69px; /* Desktop header height */
+  }
+}
+
+/* Order Badges (Swiggy & Zomato) */
+.order-badge {
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s ease;
+}
+.order-badge:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15) !important;
+}
+.order-badge:active {
+  transform: translateY(0) scale(1);
+}
+
+

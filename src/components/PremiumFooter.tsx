@@ -79,27 +79,90 @@ export default function PremiumFooter() {
         <span className="text-muted text-small">Cost for two: ₹200</span>
       </div>
 
+      {/* Order & Dining */}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+        <h4 className="font-heading" style={{ fontSize: '16px' }}>Order & Dining</h4>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+          <a href="https://www.swiggy.com/city/ranchi/grilled-grinders-lalpur-rest149305" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none' }}>
+            <div style={{
+              width: '28px',
+              height: '28px',
+              borderRadius: '50%',
+              backgroundColor: '#FFF2E6',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              border: '1px solid #FFE0CC'
+            }}>
+              <img src="/swiggy.png" alt="Swiggy" style={{ height: '16px', objectFit: 'contain', borderRadius: '0' }} />
+            </div>
+            <span className="text-muted text-small nav-link-hover" style={{ fontWeight: 600 }}>Swiggy</span>
+          </a>
+          <a href="https://www.zomato.com/ranchi/grilled-grinders-lalpur" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none' }}>
+            <div style={{
+              width: '28px',
+              height: '28px',
+              borderRadius: '50%',
+              backgroundColor: '#FFF0F0',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              border: '1px solid #FFE0E0'
+            }}>
+              <img src="/zomato.png" alt="Zomato" style={{ height: '12px', objectFit: 'contain', borderRadius: '0' }} />
+            </div>
+            <span className="text-muted text-small nav-link-hover" style={{ fontWeight: 600 }}>Zomato</span>
+          </a>
+          <a href="https://www.district.in/dining/ranchi/grilled-grinders-lalpur" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none' }}>
+            <div style={{
+              width: '28px',
+              height: '28px',
+              borderRadius: '50%',
+              backgroundColor: '#E6EFEF',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              border: '1px solid #CCE0E0',
+              overflow: 'hidden'
+            }}>
+              <img src="/district.png" alt="District" style={{ height: '16px', objectFit: 'contain', borderRadius: '0' }} />
+            </div>
+            <span className="text-muted text-small nav-link-hover" style={{ fontWeight: 600 }}>District</span>
+          </a>
+        </div>
+      </div>
+
       {/* Social Links */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
         <h4 className="font-heading" style={{ fontSize: '16px' }}>Follow Us</h4>
         <div style={{ display: 'flex', gap: '12px' }}>
-          {['IG', 'FB', 'TK'].map(social => (
-            <div key={social} className="social-icon-hover" style={{
-              width: '40px',
-              height: '40px',
-              borderRadius: '50%',
-              backgroundColor: 'var(--primary)',
-              color: 'white',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontSize: '12px',
-              fontWeight: 600,
-              cursor: 'pointer'
-            }}>
-              {social}
-            </div>
-          ))}
+          <a href="https://www.instagram.com/grilledgrinders/" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             className="social-icon-hover" 
+             style={{
+               width: '40px',
+               height: '40px',
+               borderRadius: '50%',
+               backgroundColor: 'var(--primary)',
+               display: 'flex',
+               alignItems: 'center',
+               justifyContent: 'center',
+               cursor: 'pointer',
+               textDecoration: 'none',
+               overflow: 'hidden'
+             }}>
+            <img src="/insta.jpg" alt="Instagram" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%' }} />
+          </a>
         </div>
       </div>
 

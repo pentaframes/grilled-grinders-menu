@@ -42,48 +42,48 @@ export default function MenuClientView({ menuByCategory }: MenuClientViewProps) 
 
   return (
     <section id="menu-content">
-      <div
-        style={{
-          margin: '0 auto 20px',
-          maxWidth: '560px',
-          padding: '0 12px',
-        }}
-      >
+      <div className="sticky-menu-header">
         <div
           style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '10px',
-            border: '1px solid rgba(75, 46, 43, 0.12)',
-            borderRadius: '10px',
-            backgroundColor: '#DFD0BF',
-            padding: '10px 14px',
+            margin: '0 auto 12px',
+            maxWidth: '560px',
+            padding: '0 12px',
           }}
         >
-          <span aria-hidden="true" style={{ color: '#6E5A57', fontSize: '14px' }}>⌕</span>
-          <input
-            type="text"
-            value={searchQuery}
-            onChange={(event) => setSearchQuery(event.target.value)}
-            placeholder="Search your mood..."
-            aria-label="Search menu"
+          <div
             style={{
-              border: 'none',
-              outline: 'none',
-              width: '100%',
-              backgroundColor: 'transparent',
-              color: '#5A463F',
-              fontSize: '14px',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '10px',
+              border: '1px solid rgba(75, 46, 43, 0.12)',
+              borderRadius: '10px',
+              backgroundColor: '#DFD0BF',
+              padding: '10px 14px',
             }}
-          />
+          >
+            <span aria-hidden="true" style={{ color: '#6E5A57', fontSize: '14px' }}>⌕</span>
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(event) => setSearchQuery(event.target.value)}
+              placeholder="Search your mood..."
+              aria-label="Search menu"
+              style={{
+                border: 'none',
+                outline: 'none',
+                width: '100%',
+                backgroundColor: 'transparent',
+                color: '#5A463F',
+                fontSize: '14px',
+              }}
+            />
+          </div>
         </div>
+        {hasResults && <PremiumCategoryRow categories={categories} />}
       </div>
 
       {hasResults ? (
-        <>
-          <PremiumCategoryRow categories={categories} />
-          <PremiumMenuList menuByCategory={filteredMenuByCategory} />
-        </>
+        <PremiumMenuList menuByCategory={filteredMenuByCategory} />
       ) : (
         <p className="text-muted" style={{ padding: '24px 0 36px', textAlign: 'center' }}>
           No menu items found for "{searchQuery.trim()}".
