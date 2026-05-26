@@ -12,10 +12,8 @@ export default function PremiumHero() {
       display: 'flex',
       alignItems: 'center',
       marginBottom: '40px',
-      // Simulating the blurred coffee background image with a placeholder
-      background: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("/fallback.jpg")',
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
+      // Solid background using primary brand color
+      backgroundColor: '#4B2E2B',
       padding: '40px 24px',
       color: 'white'
     }}>
@@ -141,29 +139,7 @@ export default function PremiumHero() {
           </div>
         </div>
 
-        {/* Right Side: Mock Coffee Cup Image */}
-        <div style={{
-          flex: '1 1 300px',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center'
-        }}>
-          {/* Circular placeholder mimicking the sharp focal cup on saucer */}
-          <div style={{
-            width: '240px',
-            height: '240px',
-            borderRadius: '50%',
-            backgroundColor: '#F4EFE8',
-            border: '8px solid white',
-            boxShadow: '0 20px 40px rgba(0,0,0,0.3)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            fontSize: '80px'
-          }}>
-            ☕
-          </div>
-        </div>
+
 
       </div>
     </section>
