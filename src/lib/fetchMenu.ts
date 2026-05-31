@@ -1,7 +1,8 @@
 import { MenuItem, MenuByCategory } from './types';
 
-const API_URL =
-  'https://opensheet.elk.sh/117nmpQDENXk_gkXDKvpNB2vEi9CBFROBPdyKtvQdxwE/Sheet1';
+const SHEET_ID = process.env.NEXT_PUBLIC_SHEET_ID || '117nmpQDENXk_gkXDKvpNB2vEi9CBFROBPdyKtvQdxwE';
+const SHEET_NAME = process.env.NEXT_PUBLIC_SHEET_NAME || 'Sheet1';
+const API_URL = `https://opensheet.elk.sh/${SHEET_ID}/${SHEET_NAME}`;
 
 function parseOrder(value: string): number {
   const parsed = Number.parseInt(value, 10);
