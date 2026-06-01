@@ -8,15 +8,37 @@ export default function PremiumHero() {
       borderRadius: '24px',
       overflow: 'hidden',
       position: 'relative',
-      minHeight: '400px',
+      minHeight: '450px',
       display: 'flex',
       alignItems: 'center',
       marginBottom: '40px',
-      // Solid background using primary brand color
       backgroundColor: '#4B2E2B',
-      padding: '40px 24px',
+      padding: '60px 24px',
       color: 'white'
     }}>
+      {/* Background Image and Dark Overlay */}
+      <div style={{
+        position: 'absolute',
+        inset: 0,
+        zIndex: 1,
+      }}>
+        <img
+          src="https://res.cloudinary.com/df65nwcxa/image/upload/v1780292051/DSC_8458_t3w2gp.jpg"
+          alt="Café atmosphere background"
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            borderRadius: '0'
+          }}
+        />
+        <div style={{
+          position: 'absolute',
+          inset: 0,
+          background: 'linear-gradient(to right, rgba(42, 26, 24, 0.95) 0%, rgba(42, 26, 24, 0.8) 50%, rgba(42, 26, 24, 0.4) 100%)'
+        }} />
+      </div>
+
       {/* Content wrapper mimicking the horizontal split */}
       <div style={{
         position: 'relative',
