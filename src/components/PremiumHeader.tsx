@@ -43,7 +43,7 @@ export default function PremiumHeader() {
             flexShrink: 0
           }}>
             <img 
-              src="/grilled-grinders.png" 
+              src="/menu-img.png" 
               alt="Logo" 
               style={{ width: '100%', height: '100%', objectFit: 'cover' }}
             />
@@ -69,7 +69,7 @@ export default function PremiumHeader() {
               textTransform: 'uppercase',
               marginTop: '2px'
             }}>
-              North Indian Fast Food
+              Bengali Cloud Kitchen
             </span>
           </div>
         </Link>

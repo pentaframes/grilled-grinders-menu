@@ -54,35 +54,55 @@ export default function PremiumHero() {
         
         {/* Left Side: Text block */}
         <div style={{ flex: '1 1 300px', display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-          <span style={{
-            fontSize: '12px',
-            textTransform: 'uppercase',
-            letterSpacing: '0.1em',
-            marginBottom: '16px',
-            backgroundColor: 'rgba(255,255,255,0.2)',
-            padding: '6px 12px',
-            borderRadius: '16px',
-            backdropFilter: 'blur(4px)'
-          }}>
-            Grilled Grinders, Lalpur
-          </span>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '16px' }}>
+            <span style={{
+              fontSize: '12px',
+              textTransform: 'uppercase',
+              letterSpacing: '0.1em',
+              backgroundColor: 'rgba(255,255,255,0.2)',
+              padding: '6px 12px',
+              borderRadius: '16px',
+              backdropFilter: 'blur(4px)'
+            }}>
+              Grilled Grinders & C/O Bengali
+            </span>
+          </div>
           <h1 className="font-heading" style={{
             fontSize: 'clamp(28px, 5vw, 40px)',
             color: 'white',
             lineHeight: 1.2,
-            marginBottom: '16px',
-            maxWidth: '400px'
+            marginBottom: '8px',
+            maxWidth: '440px'
           }}>
-            Fresh Grills • Premium Coffee • Fast Bites
+           Fresh Grills • Premium Coffee • Fast Bites
           </h1>
           <p style={{
             fontSize: '14px',
-            color: '#E0E0E0', /* Light gray per spec */
-            marginBottom: '24px',
-            maxWidth: '400px',
-            lineHeight: 1.5
+            color: '#B8860B',
+            fontWeight: 600,
+            letterSpacing: '0.08em',
+            textTransform: 'uppercase',
+            marginBottom: '12px'
           }}>
-            Lalpur's favorite spot for grilled sandwiches, burgers, shakes, and coffee. A cozy Ranchi café perfect for hangouts, meetings, and quick cravings.
+            Bengali Cloud Kitchen
+          </p>
+          <p style={{
+            fontSize: '14px',
+            color: '#E0E0E0',
+            marginBottom: '12px',
+            maxWidth: '420px',
+            lineHeight: 1.6
+          }}>
+            Serving authentic Bengali cuisine with care and passion. We also do catering for birthdays, kitty parties, anniversaries, get-togethers, festivals & more.
+          </p>
+          <p style={{
+            fontSize: '13px',
+            color: 'rgba(255,255,255,0.75)',
+            marginBottom: '24px',
+            fontStyle: 'italic',
+            letterSpacing: '0.04em'
+          }}>
+            Taste · Tradition · Trust
           </p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', width: '100%' }}>
             <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>

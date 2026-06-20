@@ -1,5 +1,8 @@
+'use client';
+
 import Image from 'next/image';
 import { MenuItem } from '@/lib/types';
+import { useToast } from '@/components/ToastProvider';
 
 interface PremiumMenuListProps {
   menuByCategory: Record<string, MenuItem[]>;
@@ -36,6 +39,7 @@ function getDietType(item: MenuItem): 'veg' | 'non-veg' {
 
 export default function PremiumMenuList({ menuByCategory }: PremiumMenuListProps) {
   const categories = Object.keys(menuByCategory);
+  const { showToast } = useToast();
 
   return (
     <section id="menu" style={{ marginBottom: '60px', padding: '0 12px' }}>
@@ -88,11 +92,14 @@ export default function PremiumMenuList({ menuByCategory }: PremiumMenuListProps
                   }}
                 >
                   <Image
-                    src={item.image || '/fallback.jpg'}
+                    src={item.image || '/menu-img.png'}
                     alt={item.name}
                     fill
                     sizes="64px"
-                    style={{ objectFit: 'cover' }}
+                    style={{ 
+                      objectFit: (!item.image || item.image === '/menu-img.png') ? 'contain' : 'cover',
+                      padding: (!item.image || item.image === '/menu-img.png') ? '8px' : '0'
+                    }}
                     loading={index < 3 ? 'eager' : 'lazy'}
                   />
                 </div>
@@ -131,6 +138,7 @@ export default function PremiumMenuList({ menuByCategory }: PremiumMenuListProps
                         display: '-webkit-box',
                         WebkitLineClamp: 2,
                         WebkitBoxOrient: 'vertical',
+                        fontFamily: 'ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"',
                       }}
                     >
                       {item.name}
@@ -144,8 +152,14 @@ export default function PremiumMenuList({ menuByCategory }: PremiumMenuListProps
                   <span style={{ fontSize: '15px', fontWeight: 700, color: '#D49A1F', whiteSpace: 'nowrap' }}>
                     {formatPrice(item.price)}
                   </span>
-                  <span
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      showToast('Please call the waiter to take the order');
+                    }}
                     style={{
+                      border: 'none',
+                      cursor: 'pointer',
                       minHeight: '30px',
                       minWidth: '78px',
                       padding: '0 10px',
@@ -160,7 +174,7 @@ export default function PremiumMenuList({ menuByCategory }: PremiumMenuListProps
                     }}
                   >
                     Order
-                  </span>
+                  </button>
                 </div>
               </article>
             ))}

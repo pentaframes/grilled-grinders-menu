@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import { MenuItem } from '@/lib/types';
+import { useToast } from '@/components/ToastProvider';
 
 interface MenuCardProps {
   item: MenuItem;
@@ -10,12 +11,13 @@ interface MenuCardProps {
 }
 
 export default function MenuCard({ item, index = 99 }: MenuCardProps) {
-  const [imgSrc, setImgSrc] = useState(item.image || '/fallback.jpg');
+  const [imgSrc, setImgSrc] = useState(item.image || '/menu-img.png');
   const [imgError, setImgError] = useState(false);
+  const { showToast } = useToast();
 
   const handleImgError = () => {
     if (!imgError) {
-      setImgSrc('/fallback.jpg');
+      setImgSrc('/menu-img.png');
       setImgError(true);
     }
   };
@@ -42,7 +44,10 @@ export default function MenuCard({ item, index = 99 }: MenuCardProps) {
           sizes="(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 33vw"
           loading={index < 2 ? 'eager' : 'lazy'}
           onError={handleImgError}
-          style={{ objectFit: 'cover' }}
+          style={{ 
+            objectFit: imgSrc === '/menu-img.png' ? 'contain' : 'cover',
+            padding: imgSrc === '/menu-img.png' ? '16px' : '0' 
+          }}
         />
         
         {/* Floating Add Button overlapping image */}
@@ -62,7 +67,13 @@ export default function MenuCard({ item, index = 99 }: MenuCardProps) {
           justifyContent: 'center',
           boxShadow: 'var(--shadow-btn)',
           zIndex: 2,
-        }} aria-label={`Add ${item.name} to cart`}>
+          cursor: 'pointer',
+        }} 
+        aria-label={`Add ${item.name} to cart`}
+        onClick={(e) => {
+          e.stopPropagation();
+          showToast('Please call the waiter to take the order');
+        }}>
           +
         </button>
       </div>
@@ -70,7 +81,7 @@ export default function MenuCard({ item, index = 99 }: MenuCardProps) {
       {/* Content Block */}
       <div style={{ padding: '24px 16px 16px 16px', display: 'flex', flexDirection: 'column', flex: 1 }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '12px', marginBottom: '8px' }}>
-          <h3 className="heading-font" style={{ fontSize: '18px', margin: 0, fontWeight: 700 }}>{item.name}</h3>
+          <h3 className="heading-font" style={{ fontSize: '18px', margin: 0, fontWeight: 700, fontFamily: 'ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"' }}>{item.name}</h3>
           
           <div style={{
             backgroundColor: 'var(--primary)',

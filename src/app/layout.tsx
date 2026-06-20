@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
+import { ToastProvider } from '@/components/ToastProvider';
 
 export const metadata: Metadata = {
   title: 'Grilled Grinders Ranchi',
@@ -27,11 +28,13 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body>
-        <div className="app-wrapper">
-          <main className="main-card">
-            {children}
-          </main>
-        </div>
+        <ToastProvider>
+          <div className="app-wrapper">
+            <main className="main-card">
+              {children}
+            </main>
+          </div>
+        </ToastProvider>
       </body>
     </html>
   );

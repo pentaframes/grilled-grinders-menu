@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import logoImg from '../../public/grilled-grinders.png';
+import logoImg from '../../public/menu-img.png';
 
 export default function PremiumFooter() {
   return (
@@ -52,7 +52,7 @@ export default function PremiumFooter() {
               letterSpacing: '0.05em',
               textTransform: 'uppercase'
             }}>
-              North Indian Fast Food
+              Bengali Cloud Kitchen
             </span>
           </div>
         </div>
@@ -139,6 +139,20 @@ export default function PremiumFooter() {
             <span className="text-muted text-small nav-link-hover" style={{ fontWeight: 600 }}>District</span>
           </a>
         </div>
+      </div>
+
+      {/* Contact */}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+        <h4 className="font-heading" style={{ fontSize: '16px' }}>Contact Us</h4>
+        <a href="tel:9334473003" style={{ textDecoration: 'none' }}>
+          <span className="text-muted text-small nav-link-hover">📞 9334473003</span>
+        </a>
+        <a href="tel:9334184255" style={{ textDecoration: 'none' }}>
+          <span className="text-muted text-small nav-link-hover">📞 9334184255</span>
+        </a>
+        <span className="text-muted text-small" style={{ fontStyle: 'italic', marginTop: '4px' }}>
+          Taste · Tradition · Trust
+        </span>
       </div>
 
       {/* Social Links */}
