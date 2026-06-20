@@ -10,8 +10,8 @@ export default function PremiumContent() {
     >
       {/* About / Story */}
       <article
+        className="about-article"
         style={{
-          gridColumn: 'span 2',
           backgroundColor: '#E9DFD3',
           border: '1px solid rgba(75, 46, 43, 0.08)',
           borderRadius: '16px',
@@ -19,7 +19,7 @@ export default function PremiumContent() {
         }}
       >
         <p style={{
-          fontSize: '11px',
+          fontSize: 'clamp(10px, 2.5vw, 11px)',
           fontWeight: 700,
           textTransform: 'uppercase',
           letterSpacing: '0.12em',
@@ -28,7 +28,7 @@ export default function PremiumContent() {
         }}>
           Bengali Cloud Kitchen &nbsp;·&nbsp; Serves Authentic Bengali Cuisine
         </p>
-        <h2 className="font-heading" style={{ fontSize: '24px', marginBottom: '12px' }}>
+        <h2 className="font-heading" style={{ fontSize: 'clamp(20px, 5vw, 24px)', marginBottom: '12px' }}>
           Welcome to Our Café!
         </h2>
         <p className="font-body text-muted" style={{ lineHeight: 1.75 }}>
@@ -44,7 +44,7 @@ export default function PremiumContent() {
         </p>
         <p style={{
           marginTop: '20px',
-          fontSize: '14px',
+          fontSize: 'clamp(12px, 3vw, 14px)',
           fontWeight: 700,
           letterSpacing: '0.1em',
           textTransform: 'uppercase',
@@ -63,7 +63,7 @@ export default function PremiumContent() {
           padding: '18px',
         }}
       >
-        <h3 className="font-heading" style={{ fontSize: '18px', marginBottom: '10px' }}>
+        <h3 className="font-heading" style={{ fontSize: 'clamp(16px, 4vw, 18px)', marginBottom: '10px' }}>
           🎉 Catering Services
         </h3>
         <p className="font-body text-muted" style={{ marginBottom: '10px' }}>
@@ -94,7 +94,7 @@ export default function PremiumContent() {
           padding: '18px',
         }}
       >
-        <h3 className="font-heading" style={{ fontSize: '18px', marginBottom: '8px' }}>Location</h3>
+        <h3 className="font-heading" style={{ fontSize: 'clamp(16px, 4vw, 18px)', marginBottom: '8px' }}>Location</h3>
         <p className="font-body text-muted">
           Uddhab Babu Street, Anna School Lane,
           <br />
@@ -111,7 +111,7 @@ export default function PremiumContent() {
           padding: '18px',
         }}
       >
-        <h3 className="font-heading" style={{ fontSize: '18px', marginBottom: '8px' }}>Hours & Service</h3>
+        <h3 className="font-heading" style={{ fontSize: 'clamp(16px, 4vw, 18px)', marginBottom: '8px' }}>Hours & Service</h3>
         <p className="font-body text-muted">
           9:00 AM to 9:00 PM
           <br />
@@ -128,7 +128,7 @@ export default function PremiumContent() {
           padding: '18px',
         }}
       >
-        <h3 className="font-heading" style={{ fontSize: '18px', marginBottom: '10px', color: 'white' }}>
+        <h3 className="font-heading" style={{ fontSize: 'clamp(16px, 4vw, 18px)', marginBottom: '10px', color: 'white' }}>
           Contact Us
         </h3>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
@@ -138,10 +138,10 @@ export default function PremiumContent() {
             gap: '10px',
             textDecoration: 'none',
             color: '#F4EFE8',
-            fontSize: '16px',
+            fontSize: 'clamp(14px, 3.5vw, 16px)',
             fontWeight: 600
           }}>
-            <span style={{ fontSize: '18px' }}>📞</span> 9334473003
+            <span style={{ fontSize: 'clamp(16px, 4vw, 18px)' }}>📞</span> 9334473003
           </a>
           <a href="tel:9334184255" style={{
             display: 'flex',
@@ -149,10 +149,10 @@ export default function PremiumContent() {
             gap: '10px',
             textDecoration: 'none',
             color: '#F4EFE8',
-            fontSize: '16px',
+            fontSize: 'clamp(14px, 3.5vw, 16px)',
             fontWeight: 600
           }}>
-            <span style={{ fontSize: '18px' }}>📞</span> 9334184255
+            <span style={{ fontSize: 'clamp(16px, 4vw, 18px)' }}>📞</span> 9334184255
           </a>
         </div>
       </article>
@@ -166,7 +166,7 @@ export default function PremiumContent() {
           padding: '18px',
         }}
       >
-        <h3 className="font-heading" style={{ fontSize: '18px', marginBottom: '8px' }}>Cuisine & Budget</h3>
+        <h3 className="font-heading" style={{ fontSize: 'clamp(16px, 4vw, 18px)', marginBottom: '8px' }}>Cuisine & Budget</h3>
         <p className="font-body text-muted">
           Cuisine: Authentic Bengali
           <br />

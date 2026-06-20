@@ -236,6 +236,16 @@ img {
   transform: translateY(0) scale(1);
 }
 
+.about-article {
+  grid-column: span 2;
+}
+
+@media (max-width: 640px) {
+  .about-article {
+    grid-column: span 1;
+  }
+}
+
 /* Toast Notification Styles */
 .toast-popup {
   position: fixed;

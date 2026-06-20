@@ -56,7 +56,7 @@ export default function PremiumHero() {
         <div style={{ flex: '1 1 300px', display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '16px' }}>
             <span style={{
-              fontSize: '12px',
+              fontSize: 'clamp(10px, 2.5vw, 12px)',
               textTransform: 'uppercase',
               letterSpacing: '0.1em',
               backgroundColor: 'rgba(255,255,255,0.2)',
@@ -68,7 +68,7 @@ export default function PremiumHero() {
             </span>
           </div>
           <h1 className="font-heading" style={{
-            fontSize: 'clamp(28px, 5vw, 40px)',
+            fontSize: 'clamp(24px, 7vw, 40px)',
             color: 'white',
             lineHeight: 1.2,
             marginBottom: '8px',
@@ -77,7 +77,7 @@ export default function PremiumHero() {
            Fresh Grills • Premium Coffee • Fast Bites
           </h1>
           <p style={{
-            fontSize: '14px',
+            fontSize: 'clamp(12px, 3vw, 14px)',
             color: '#B8860B',
             fontWeight: 600,
             letterSpacing: '0.08em',
@@ -87,7 +87,7 @@ export default function PremiumHero() {
             Bengali Cloud Kitchen
           </p>
           <p style={{
-            fontSize: '14px',
+            fontSize: 'clamp(13px, 3.5vw, 16px)',
             color: '#E0E0E0',
             marginBottom: '12px',
             maxWidth: '420px',
@@ -96,7 +96,7 @@ export default function PremiumHero() {
             Serving authentic Bengali cuisine with care and passion. We also do catering for birthdays, kitty parties, anniversaries, get-togethers, festivals & more.
           </p>
           <p style={{
-            fontSize: '13px',
+            fontSize: 'clamp(12px, 3vw, 14px)',
             color: 'rgba(255,255,255,0.75)',
             marginBottom: '24px',
             fontStyle: 'italic',
@@ -113,7 +113,7 @@ export default function PremiumHero() {
             
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
               <span style={{
-                fontSize: '11px',
+                fontSize: 'clamp(10px, 2.5vw, 12px)',
                 textTransform: 'uppercase',
                 letterSpacing: '0.12em',
                 color: 'rgba(255, 255, 255, 0.7)',
@@ -138,7 +138,7 @@ export default function PremiumHero() {
                      boxShadow: '0 4px 15px rgba(0, 0, 0, 0.1)',
                    }}>
                   <img src="/swiggy.png" alt="Swiggy" style={{ height: '20px', objectFit: 'contain', borderRadius: '0' }} />
-                  <span style={{ color: '#FC8019', fontWeight: 700, fontSize: '14px', fontFamily: 'var(--font-body)' }}>Swiggy</span>
+                  <span style={{ color: '#FC8019', fontWeight: 700, fontSize: 'clamp(12px, 3vw, 14px)', fontFamily: 'var(--font-body)' }}>Swiggy</span>
                 </a>
                 <a href="https://www.zomato.com/ranchi/grilled-grinders-lalpur" 
                    target="_blank" 
@@ -156,7 +156,7 @@ export default function PremiumHero() {
                      boxShadow: '0 4px 15px rgba(0, 0, 0, 0.1)',
                    }}>
                   <img src="/zomato.png" alt="Zomato" style={{ height: '16px', objectFit: 'contain', borderRadius: '0' }} />
-                  <span style={{ color: '#E23744', fontWeight: 700, fontSize: '14px', fontFamily: 'var(--font-body)' }}>Zomato</span>
+                  <span style={{ color: '#E23744', fontWeight: 700, fontSize: 'clamp(12px, 3vw, 14px)', fontFamily: 'var(--font-body)' }}>Zomato</span>
                 </a>
                 <a href="https://www.district.in/dining/ranchi/grilled-grinders-lalpur" 
                    target="_blank" 
@@ -174,7 +174,7 @@ export default function PremiumHero() {
                      boxShadow: '0 4px 15px rgba(0, 0, 0, 0.1)',
                    }}>
                   <img src="/district.png" alt="District" style={{ height: '18px', objectFit: 'contain', borderRadius: '0' }} />
-                  <span style={{ color: '#0F2A27', fontWeight: 700, fontSize: '14px', fontFamily: 'var(--font-body)' }}>District</span>
+                  <span style={{ color: '#0F2A27', fontWeight: 700, fontSize: 'clamp(12px, 3vw, 14px)', fontFamily: 'var(--font-body)' }}>District</span>
                 </a>
               </div>
             </div>
